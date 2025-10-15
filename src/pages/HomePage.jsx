@@ -43,8 +43,8 @@ const HomePage = ({ onAddToCart }) => {
         <div className="homepage">
             <section className="hero">
                 <div className="hero-content">
-                <h1>Bienvenido a B-Side</h1>
-                <p>Tu tienda online de vinilos</p>
+                <h1>Los mejores vinilos para tu colección</h1>
+                <p>¡Descubrí nuestra tienda con ediciones únicas y nuevos lanzamientos!</p>
                 </div>
                 </section>
 

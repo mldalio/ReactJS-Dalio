@@ -1,19 +1,32 @@
 .hero {
     height: 60vh;
-    background-image: linear-gradient(rgb(0,0,0,0.6), rgb(0,0,0,0.6)), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1350');
+    background-image: url('../assets/fondo-hero-1.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     display: flex;
-    align-items: center;
+    align-items: center; 
     justify-content: center;
-    text-align: center;
-    color: white;
-    margin-bottom: 40px;
 }
 
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;  
+      
+    gap: 8px;
+}
+
+
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 3rem; 
+    margin: 0;   
+}
+
+.hero-content p {
+    font-size: 1.2rem;     
+    margin: 0;
 }
 
 .categories-section, .products-section {
