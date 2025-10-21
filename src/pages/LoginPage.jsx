@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginPage.css';
+import loginArt from '../assets/login-art.jpg'; 
 
 const LoginPage = ({ onLogin }) => {
     const navigate = useNavigate();
@@ -8,21 +9,22 @@ const LoginPage = ({ onLogin }) => {
     const [password, setPassword] = useState('');
 
     const handleSubmit = (e) => {
-        e.preventDefault();        
+        e.preventDefault();
         onLogin();
         navigate('/');
     };
 
-    return (
-        <div className="login-page">
-            <div className="login-image">                
-            </div>
-            <div className="login-form">
+    return (     
+        <div className="login-page-background">          
+            <div className="login-card">
+                <img src={loginArt} alt="Artwork de vinilos" className="login-card-image" />
+
                 <form onSubmit={handleSubmit} className="login-form">
-                    <h2>Iniciar Sesión</h2>
-                    <p>Por favor, inicie sesión para continuar.</p>
+                    <h2>Bienvenido</h2>
+                    <p>Inicia sesión para continuar.</p>
+                    
                     <div className="form-group">
-                        <label htmlFor="email">Email:</label>
+                        <label htmlFor="email">Email</label>
                         <input
                             type="email"
                             id="email"
@@ -31,8 +33,9 @@ const LoginPage = ({ onLogin }) => {
                             required
                         />
                     </div>
+                    
                     <div className="form-group">
-                        <label htmlFor="password">Contraseña:</label>
+                        <label htmlFor="password">Contraseña</label>
                         <input
                             type="password"
                             id="password"
@@ -41,6 +44,7 @@ const LoginPage = ({ onLogin }) => {
                             required
                         />
                     </div>
+                    
                     <button type="submit" className="login-btn">Iniciar Sesión</button>
                 </form>
             </div>

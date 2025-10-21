@@ -42,6 +42,22 @@ const handleRemoveFromCart = (productIdToRemove) => {
   );
 };
 
+const handleUpdateQuantity = (productId, amount) => {
+  setCart(prevCart => {
+    const updatedCart = prevCart.map(item => {
+      if (item.id === productId) {
+        const newQuantity = Math.max(1, item.quantity + amount);
+        return { ...item, quantity: newQuantity };
+      }
+      return item;
+    });
+    return updatedCart;
+  });
+};
+
+const handleClearCart = () => {
+  setCart([]);
+}
 
   const router = createBrowserRouter([
     {
@@ -64,7 +80,7 @@ const handleRemoveFromCart = (productIdToRemove) => {
         },
         {
           path: 'cart',
-          element: <CartPage cartItems={cart} onRemoveFromCart={handleRemoveFromCart} />,
+          element: <CartPage cartItems={cart} onRemoveFromCart={handleRemoveFromCart} onUpdateQuantity={handleUpdateQuantity} onClearCart={handleClearCart} />,
         },
         {
           path: 'login',

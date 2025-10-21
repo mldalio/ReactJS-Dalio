@@ -3,10 +3,17 @@
 :root {
   font-family: 'Sora', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   --primary-color: #a4161a;
+  --primary-color-hover: #8b1215;
   --text-color: #fafafa;
   --card-bg: #1b1a1a;
-  --border-color: #2b2b2b;
+  --border-color: #2b2b2b; 
 
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {

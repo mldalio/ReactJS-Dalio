@@ -13,30 +13,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;  
-      
-    gap: 8px;
+    text-align: center;        
+    gap: 1rem;
+    color:white;
 }
 
 
 .hero-content h1 {
-    font-size: 3rem; 
+    font-size: clamp(2.5rem, 5vw, 4rem);
     margin: 0;   
 }
 
 .hero-content p {
-    font-size: 1.2rem;     
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     margin: 0;
 }
 
 .categories-section, .products-section {
     max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+    margin-block: clamp(2.5rem, 8vw, 5rem);
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
 }
 
 .categories-section h2, .products-section h2 {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 4vw, 2.35rem);
     margin-bottom: 20px;
     text-align: center;
 }
@@ -52,7 +53,7 @@
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
-    height: 250px;
+    aspect-ratio: 1/1;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
@@ -60,7 +61,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease-in-out, filter 0.3s ease-in-out;
 }
 
 .category-card:hover img {
@@ -69,13 +70,13 @@
 
 .category-name {
     position: absolute;
-    bottom: 0;
-    width: 100%;
+    inset: auto 0 0 0;    
     background: rgba(0, 0, 0, 0.6);
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 2rem 1rem 1rem;
     font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .products-grid {
@@ -96,16 +97,17 @@
 }
 
 .view-all {
-    background-color: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    padding: 8px 16px;
+    background-color: var(--primary-color);    
+    color: white;
+    padding: 0.75rem 1.5rem;
     border-radius: 4px;
     text-decoration: none;
-    font-weight: 500;    
+    font-weight: 500;   
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .view-all:hover {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color-hover);
     color: white;
 }

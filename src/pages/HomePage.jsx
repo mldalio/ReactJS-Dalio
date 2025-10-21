@@ -2,14 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import './HomePage.css';
+import rockImage from '../assets/rock.jpeg';
+import metalImage from '../assets/metal.jpg';
+import popImage from '../assets/pop.jpg';
+import jazzImage from '../assets/jazz.webp';
 
 const API_URL = 'https://68eed9e6b06cc802829b7689.mockapi.io/vinyls';
 
 const categories = [
-  { name: 'Rock', image: 'https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?w=500' },
-  { name: 'Metal', image: 'https://images.unsplash.com/photo-1516279923833-25a171d3221b?w=500' },
-  { name: 'Pop', image: 'https://images.unsplash.com/photo-1508700115892-45ecd056271a?w=500' },
-  { name: 'Jazz', image: 'https://images.unsplash.com/photo-1511192336575-5a79af67d629?w=500' }
+  { name: 'Rock', image: rockImage },
+  { name: 'Metal', image: metalImage },
+  { name: 'Pop', image: popImage },
+  { name: 'Jazz', image: jazzImage }
 ];
 
 const HomePage = ({ onAddToCart }) => {
@@ -49,7 +53,7 @@ const HomePage = ({ onAddToCart }) => {
                 </section>
 
                 <section className="categories-section">
-                    <h2>Explorá por Géneros</h2>
+                    <h2>Explorá por géneros</h2>
                     <div className="categories-grid">
                         {categories.map((category) => (
                             <div key={category.name} className="category-card">

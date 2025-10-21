@@ -4,42 +4,65 @@
     padding: 16px;
     text-align: center;
     background-color: var(--card-bg);
-    transition: box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
 }
 
-.product-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.product-card img {
+    transition: transform 0.4s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .product-image {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    display: block;
+    aspect-ratio: 1/1;
     object-fit: cover;
-    margin-bottom: 12px;
 }
 
-.product-name {
-    font-size: 1.2em;
-    margin: 10px 0;
+.product-artist {
+  color: #ffffff;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-weight: 500;
+  margin: 1rem 0 0.25rem 0;
+  text-overflow: ellipsis;
 }
 
 .product-price {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     font-weight: bold;
-    color: var(--primary-color);
+    color: white;
+}
+
+.product-album {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    opacity: 0.8;
+    line-height: 1.4;  
+    height: 2.8em;  
 }
 
 .add-to-cart-btn {
     background-color: var(--primary-color);
     color: #fff;
     border: none;
-    padding: 10px 16px;
+    padding: 0.75rem 1.5rem;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 12px;
+    width: 100%;
+    margin-top: auto;
 }
 
 .add-to-cart-btn:hover {
-    background-color: #535bf2;
+    background-color: var(--primary-color-hover);
 }
