@@ -1,5 +1,5 @@
 .footer {
-    background-color: #212121;
+    background-color: var(--card-bg);
     color: #ffffff;
     padding: 20px 40px;
     margin-top: 40px;
@@ -21,7 +21,7 @@
 }
 
 .footer-content a {
-    color: var(--primary-color);
+    color: #ff5a66;
     text-decoration: none;    
 }
 

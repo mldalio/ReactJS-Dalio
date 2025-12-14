@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './ProductCard.css';
+import { useCart } from './CartContentx';
 
-const ProductCard = ({ product, onAddToCart }) => {
+const ProductCard = ({ product }) => {
+  const { addToCart } = useCart();
+
   return (
     <div className="product-card">
       
@@ -19,7 +22,7 @@ const ProductCard = ({ product, onAddToCart }) => {
           <p className="product-price">${product.price}</p>
         </div>
 
-        <button onClick={() => onAddToCart(product)} className="add-to-cart-btn">
+        <button onClick={() => addToCart(product)} className="add-to-cart-btn">
           Agregar al carrito
         </button>
       </div>

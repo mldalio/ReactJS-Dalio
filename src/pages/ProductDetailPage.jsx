@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useCart } from '../components/CartContentx';
 
 const API_URL = 'https://68eed9e6b06cc802829b7689.mockapi.io/vinyls';
 
-const ProductDetailPage = ({ onAddToCart }) => {
+const ProductDetailPage = () => {
     const { productId } = useParams();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const { addToCart } = useCart();
 
     useEffect(() => {
         const fetchProduct = async () => {

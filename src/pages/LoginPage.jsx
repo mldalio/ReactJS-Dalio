@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './LoginPage.css';
-import loginArt from '../assets/login-art.jpg'; 
+import loginArt from '../assets/login-art.jpg';
+import { useAuth } from '../components/AuthContext'; 
 
-const LoginPage = ({ onLogin }) => {
+const LoginPage = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const {login} = useAuth();
+    
+    const from = location.state?.from?.pathname || '/';
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onLogin();
-        navigate('/');
+        login();
+        navigate(from, {replace:true});
     };
 
     return (     
