@@ -29,14 +29,14 @@
     margin: 0;
 }
 
-.categories-section, .products-section {
+.products-section {
     max-width: 1200px;
     margin-block: clamp(2.5rem, 8vw, 5rem);
     margin-inline: auto;
     padding-inline: clamp(1rem, 4vw, 2rem);
 }
 
-.categories-section h2, .products-section h2 {
+.products-section h2 {
     font-size: clamp(1.8rem, 4vw, 2.35rem);
     margin-bottom: 20px;
     text-align: center;

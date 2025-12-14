@@ -50,19 +50,7 @@ const HomePage = ({ onAddToCart }) => {
                 <h1>Los mejores vinilos para tu colección</h1>
                 <p>¡Descubrí nuestra tienda con ediciones únicas y nuevos lanzamientos!</p>
                 </div>
-                </section>
-
-                <section className="categories-section">
-                    <h2>Explorá por géneros</h2>
-                    <div className="categories-grid">
-                        {categories.map((category) => (
-                            <div key={category.name} className="category-card">
-                                <img src={category.image} alt={category.name} className="category-image" />
-                                <div className="category-name">{category.name}</div>
-                            </div>
-                        ))}
-                    </div>                    
-                </section>
+                </section>               
 
             <section className="products-section">
                 <div className="section-header">
